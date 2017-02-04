@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="DataStructures" Database="" Version="10.0.0">
+  <Project Name="lab_1a" Path="lab_a1/lab_a1.project" Active="No"/>
+  <Project Name="Assignment_1a_milestokilo" Path="Assignment_1a/Assignment_1a.project" Active="No"/>
+  <Project Name="Assignment_1a_Geomentric_Objects" Path="Assignment_1a_Geomentric_Objects/Assignment_1a_Geomentric_Objects.project" Active="No"/>
+  <Project Name="Assignment_1b_3D" Path="Assignment_1b_3D/Assignment_1b_3D.project" Active="No"/>
+  <Project Name="Assignment_1b_psuedorandom" Path="Assignment_1b_psuedorandom/Assignment_1b_psuedorandom.project" Active="No"/>
+  <Project Name="Lab_1b_clock" Path="Lab_1b_clock/Lab_1b_clock.project" Active="No"/>
+  <Project Name="Lab_1b_cards" Path="Lab_1b_cards/Lab_1b_cards.project" Active="No"/>
+  <Project Name="Polynomial" Path="Polynomial/Polynomial.project" Active="No"/>
+  <Project Name="Throttle" Path="Throttle/Throttle.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="lab_1a" ConfigName="Debug"/>
+      <Project Name="Assignment_1a_milestokilo" ConfigName="Debug"/>
+      <Project Name="Assignment_1a_Geomentric_Objects" ConfigName="Debug"/>
+      <Project Name="Assignment_1b_3D" ConfigName="Debug"/>
+      <Project Name="Assignment_1b_psuedorandom" ConfigName="Debug"/>
+      <Project Name="Lab_1b_clock" ConfigName="Debug"/>
+      <Project Name="Lab_1b_cards" ConfigName="Debug"/>
+      <Project Name="Polynomial" ConfigName="Debug"/>
+      <Project Name="Throttle" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="lab_1a" ConfigName="Release"/>
+      <Project Name="Assignment_1a_milestokilo" ConfigName="Release"/>
+      <Project Name="Assignment_1a_Geomentric_Objects" ConfigName="Release"/>
+      <Project Name="Assignment_1b_3D" ConfigName="Release"/>
+      <Project Name="Assignment_1b_psuedorandom" ConfigName="Release"/>
+      <Project Name="Lab_1b_clock" ConfigName="Release"/>
+      <Project Name="Lab_1b_cards" ConfigName="Release"/>
+      <Project Name="Polynomial" ConfigName="Release"/>
+      <Project Name="Throttle" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

@@ -1,8 +1,8 @@
-#include "throttle.h"
-#include <stdio.h>
-#include <iostream>
+#ifndef THROTTLE_H
+#define THROTTLE_H
 
-using namespace std;
+
+
 
 class throttle
 {
@@ -17,5 +17,7 @@ public:
 	bool is_on() const;
 private:
 	int position;
+	int top_position;
 };
 
+#endif // THROTTLE_H

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\DataStructures.workspace">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\DataStructures.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\point\point.h" Name="FileName"/>
+      <int Value="22" Name="FirstVisibleLine"/>
+      <int Value="36" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\point\point.cpp" Name="FileName"/>
+      <int Value="53" Name="FirstVisibleLine"/>
+      <int Value="76" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\point\main.cpp" Name="FileName"/>
+      <int Value="3" Name="FirstVisibleLine"/>
+      <int Value="17" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="DataStructures" Database="" Version="10.0.0">
+  <Project Name="lab_1b" Path="lab_1b/lab_1b.project" Active="No"/>
+  <Project Name="Lab3a" Path="Lab3a/Lab3a.project" Active="No"/>
+  <Project Name="Sequence" Path="Sequence/Sequence.project" Active="No"/>
+  <Project Name="point" Path="point/point.project" Active="No"/>
+  <Project Name="Bag" Path="Bag/Bag.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="lab_1b" ConfigName="Debug"/>
+      <Project Name="Lab3a" ConfigName="Debug"/>
+      <Project Name="Sequence" ConfigName="Debug"/>
+      <Project Name="point" ConfigName="Debug"/>
+      <Project Name="Bag" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="lab_1b" ConfigName="Release"/>
+      <Project Name="Lab3a" ConfigName="Release"/>
+      <Project Name="Sequence" ConfigName="Release"/>
+      <Project Name="point" ConfigName="Release"/>
+      <Project Name="Bag" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

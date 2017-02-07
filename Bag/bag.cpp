@@ -39,6 +39,7 @@ bag::size_type bag::count(const value_type& target) const
 	return answer;
 	}
 	
+
 void bag::insert(const value_type& entry)
 {
 	//assert(size() < CAPACITY);
@@ -64,12 +65,30 @@ bool bag::erase_one(const value_type& target)
 	
 	//When execution reaches here, target is in the bag at data[index]
 	// So, reduce used by 1 and copy the last item onto data[index].
-	--used;
-	data[index] = data[used];
+	data[index] = data[--used];
 	return true;
+	}
+	//----------------------
+	//QUESTION 12
+	//----------------------
+	bag::size_type bag::erase(const value_type& target) 
+{
+	size_type copies;
+	size_type index;
+	copies = 0;
+	index = 0;
+	while((index < used) && (data[index] != target))
+		++index;
+		if(index == used)
+			return 0;// Target not in the bag. Do nothing.
+		if((data[index] == target))
+			++copies;
+		data[index] = data[--used];
+	return copies;
 	}
 }
 
+	
 
 
 

@@ -19,6 +19,9 @@ int main(int argc, char **argv)
 	//get_ages(ages);
 	//check_ages(ages);
 	cout << "May your family live long" << endl;
+	cout <<first_bag.size() <<endl;
+	first_bag.erase_one(8);
+	cout << first_bag.size() <<endl;
 	
 	return EXIT_SUCCESS;
 }

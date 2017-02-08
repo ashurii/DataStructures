@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Bag - Debug ]----------"
-	@cd "Bag" && "$(MAKE)" -f  "Bag.mk"
+	@echo "----------Building project:[ Multiset - Debug ]----------"
+	@cd "Multiset" && "$(MAKE)" -f  "Multiset.mk"
 clean:
-	@echo "----------Cleaning project:[ Bag - Debug ]----------"
-	@cd "Bag" && "$(MAKE)" -f  "Bag.mk" clean
+	@echo "----------Cleaning project:[ Multiset - Debug ]----------"
+	@cd "Multiset" && "$(MAKE)" -f  "Multiset.mk" clean

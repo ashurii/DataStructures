@@ -4,7 +4,8 @@
   <Project Name="Lab3a" Path="Lab3a/Lab3a.project" Active="No"/>
   <Project Name="Sequence" Path="Sequence/Sequence.project" Active="No"/>
   <Project Name="point" Path="point/point.project" Active="No"/>
-  <Project Name="Bag" Path="Bag/Bag.project" Active="Yes"/>
+  <Project Name="Bag" Path="Bag/Bag.project" Active="No"/>
+  <Project Name="Multiset" Path="Multiset/Multiset.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -13,6 +14,7 @@
       <Project Name="Sequence" ConfigName="Debug"/>
       <Project Name="point" ConfigName="Debug"/>
       <Project Name="Bag" ConfigName="Debug"/>
+      <Project Name="Multiset" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -21,6 +23,7 @@
       <Project Name="Sequence" ConfigName="Release"/>
       <Project Name="point" ConfigName="Release"/>
       <Project Name="Bag" ConfigName="Release"/>
+      <Project Name="Multiset" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

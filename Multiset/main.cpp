@@ -2,38 +2,40 @@
 #include <iostream>
 #include <cstdlib>
 #include <set>
-
 using namespace std;
-int main(int argc, char **argv)
-{
-//--------------------------
-//Question 30
-//--------------------------
-	multiset<int> ages;
-	multiset<int>::iterator it;
-	//get_ages(ages);
-	//check_ages(ages);
-	ages.insert(10);
-	ages.insert(20);
-	ages.insert(30);
-	for(it = ages.begin(); it != ages.end(); ++it)
-		cout << *it << endl;
-		
-	cout <<" May your family live long and prosper."<< endl;
-//-----------------------------------------------
-// QUESTION 34
-//-----------------------------------------------
 
-	multiset<double> num;
-	num.insert(1);
-	num.insert(2);
-	num.insert(3);
+void get_ages(multiset<int>& ages)
+{
 	
-	cout << "The average number is:\n";
-	cout << average(num);
+	int user_input;
+	cout << "Enter your families ages." << endl;
+	cout << "Enter negative number to finish" << endl;
+	cin >> user_input;
 	
-return EXIT_SUCCESS;
+
+	while(user_input >=0)
+	{
+		if(ages.size() < ages.max_size())
+			ages.insert(user_input);
+		else
+			cout << "I have run out of room and can't add that age.";
+		cin >> user_input;
+	}
 }
+	
+void check_ages(multiset<int>& ages)
+{
+	int user_input;
+	cout <<"Type those again. Press return after each age:" << endl;
+	while(ages.size() > 0)
+	{
+		cin >> user_input;
+		if(true)
+			cout << "Yes, I've found that age and removed it." << endl;
+		else
+			cout << "No, that age does not occur!" << endl;
+		}
+	}
 
 double average(const multiset<double>& num)
 {
@@ -44,34 +46,52 @@ double average(const multiset<double>& num)
 		sum+= *it2;
 	average = sum/num.size();
 	return average;
-	}
-	
-//-------------------------------------------------------------------------
-/*void get_ages(const multiset<int>& ages)
+	}	
+int main(int argc, char **argv)
 {
-	int user_input;
+//--------------------------
+//Question 30 & 34
+//--------------------------
+	multiset<int> ages;
+	multiset<int>::iterator it;
+	
+	multiset<double> num;
+	num.insert(1);
+	num.insert(2);
+	num.insert(3);
+	
+	cout << "The average of 1,2,3 is:" << endl;
+	cout << average(num) << endl;
+	check_ages(ages);
+	get_ages(ages);
+
+	
+int user_input;
 	cout << "Enter your families ages." << endl;
 	cout << "Enter negative number to finish" << endl;
 	cin >> user_input;
 	
 	while(user_input >=0)
-		if(ages.size() < ages.CAPACITY)
+	{
+		if(ages.size() < ages.max_size())
 			ages.insert(user_input);
 		else
-			cout << "I have run out of room and can't add that age."
+			cout << "I have run out of room and can't add that age.";
 		cin >> user_input;
 	}
+	for(it = ages.begin(); it != ages.end(); ++it)
+		cout << *it << endl;
+		
+	cout <<" May your family live long and prosper."<< endl;
+
+
+
+
 	
-void check_ages(const multiset<int>& ages)
-{
-	int user_input;
-	cout <<"Type those again. Press return after each age:" << endl;
-	while(ages.size() > 0)
-	{
-		cin >> user_input;
-		if(ages.erase_one(user_input))
-			cout << "Yes, I've found that age and removed it." << endl;
-		else
-			cout << "No, that age does not occur!" << endl;
-		}
-	}*/
+return EXIT_SUCCESS;
+}
+
+
+	
+//-------------------------------------------------------------------------
+

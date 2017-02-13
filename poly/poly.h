@@ -181,7 +181,27 @@ namespace colorado_edu
 	void clear( );
 	
 	// CONSTANT MEMBER FUNCTIONS
-	polynomial antiderivative( ) const;
+//	polynomial antiderivative( ) const
+//	{
+//			//Anti-derivative: Take the exponent of the variale+1, divide coefficient by the exponent
+//			//for antiderivative of(x^r) = (x/r)^(r+1)
+//			polynomial a_poly;
+//			
+//			double z;	//z is a temporary variable for containin the value of the current coefficient
+//			
+//			unsigned int i;
+//			
+//			for(i = this->current_degree; i > 0; --i)
+//		{
+//			z = coef[i];	// z assigned to current coefficient
+//			z/=(double)(i);			// z divided by the exponent (index) of the current coefficient
+//			a_poly.assign_coef(z, current_degree+1);
+//			return a_poly;
+//		}
+//	}
+
+     polynomial antiderivative( ) const;
+	 
 	double coefficient(unsigned int exponent) const;
 	double definite_integral(double x0, double x1) const;
 	unsigned int degree( ) const { return current_degree; }
@@ -206,7 +226,7 @@ namespace colorado_edu
 		return d_poly;	
 	}
 	double eval(double x) const;
-        bool is_zero( ) const;
+	bool is_zero( ) const;
 	unsigned int next_term(unsigned int e) const;
 	double numeric_definite_integral(double x0, double x1, unsigned int n);
 	unsigned int previous_term(unsigned int e) const;

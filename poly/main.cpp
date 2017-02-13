@@ -1,7 +1,12 @@
 #include <stdio.h>
+#include <iostream>
+#include "poly.h"
+
+using namespace std;
+using namespace colorado_edu;
 
 int main(int argc, char **argv)
 {
-	printf("hello world\n");
-	return 0;
+	polynomial poly1(4,4);
+	cout << poly1;
 }

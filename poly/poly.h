@@ -205,26 +205,8 @@ namespace colorado_edu
 	double coefficient(unsigned int exponent) const;
 	double definite_integral(double x0, double x1) const;
 	unsigned int degree( ) const { return current_degree; }
-	polynomial derivative( ) const
-	{
-			//The derivative: Take the exponent of the variable-1, multiply the coefficient by the exponent
-		//for , dy/dx(x^r) = rx^(r-1) 
-		polynomial d_poly;			
-		
-		double z;		// z is a temporary variable for containing the value of the current coefficient
-		
-		unsigned int i;
-		for(i = this->current_degree; i > 0; --i)
-		{
-			z = coef[i];	// z assigned to current coefficient
-			z*=(double)(i);			// z multiplied by the exponent (index) of the current coefficient
-			d_poly.assign_coef(z, current_degree-1);
-			return d_poly;
-			
-		}
-		
-		return d_poly;	
-	}
+	polynomial derivative( ) const;
+	
 	double eval(double x) const;
 	bool is_zero( ) const;
 	unsigned int next_term(unsigned int e) const;

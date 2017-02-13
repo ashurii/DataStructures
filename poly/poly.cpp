@@ -57,9 +57,14 @@ namespace colorado_edu
 	{
 		double eval_result;
 		unsigned int i;
-		for(i = 0; i < current_degree; ++i)
+		double temp;
+		for(i = 0; i <= current_degree; ++i)
 		{
-			eval_result+= pow(x, i);
+			if(i > 0 && coefficient(i) > 0)				
+				temp = coefficient(i) * pow(x, i);		
+			else if(i == 0 && coefficient(i) >0)		
+				temp = coefficient(i) * x;						
+			eval_result += temp;						
 		}
 		return eval_result;
 	}
@@ -77,9 +82,9 @@ namespace colorado_edu
 	//     POSTCONDITION: Returns the value of the definite integral computed from
 	//     x0 to x1 by using the trapezoid method with n sections of equal width.
 	{
-		// Definite Integral: delta(x) = (x1 - x0)/n
+		// Definite Integral: delta(x) = (a - b)/n
 		// (where x0 and x1 are the upper and lower bounds) 
-		// (delta(x))/2 * [f(x0) + 2f(x0)... 2f(x1) + f(x1)]
+		// (delta(x))/2 * [f(x0) + 2f(x0)... 2f(xn-1) + f(xn)]
 		
 		double delta_x;	
 		double poly_eval;
@@ -89,14 +94,15 @@ namespace colorado_edu
 		delta_x = (x1 - x0)/n;
 		poly_eval = eval(x0);
 		
-		for(i = x0; i < x1; ++i)
+		
+		for(i = x0; i < x1; i+=delta_x)
 			poly_eval+= 2*eval(i);
 		
-		poly_eval +=eval(x1);
+		poly_eval += eval(x1);
 		
 		d_intgrl = (delta_x/2)*poly_eval;
 		
-		return d_intgrl;
+		return eval(x1);
 	}
 	polynomial polynomial::antiderivative( ) const
 	{
@@ -117,20 +123,42 @@ namespace colorado_edu
 		}
 		return a_poly;
 	}
-	
+	polynomial polynomial:: derivative( ) const
+	{
+			//The derivative: Take the exponent of the variable-1, multiply the coefficient by the exponent
+		//for , dy/dx(x^r) = rx^(r-1) 
+		polynomial d_poly;			
+		
+		double z;		// z is a temporary variable for containing the value of the current coefficient
+		
+		unsigned int i;
+		for(i = this->current_degree; i > 0; --i)
+		{
+			z = coef[i];	// z assigned to current coefficient
+			z*=(double)(i);			// z multiplied by the exponent (index) of the current coefficient
+			d_poly.assign_coef(z, current_degree-1);
+			return d_poly;
+			
+		}
+		
+		return d_poly;	
+	}	
 	 ostream& operator<< (ostream& out, const polynomial& p)
 //     POSTCONDITION: The polynomial has been printed to ostream out, which,
 //     in turn, has been returned to the calling function.
 	{
 
 			unsigned int i;
-			unsigned int count;
 			
-			for(i = p.degree(); i > 0; i)
+			
+			for(i = p.degree(); i > 0; --i)
 			{
 				if(p.coefficient(i) > 0)
-				out << p.coefficient(i) <<"x^"<< i;	// prints x ^ index of coef[]
-				
+					out << p.coefficient(i) <<" x^"<< i;	// prints x ^ index of coef[]
+				if(p.previous_term(i) > 0 && (i -1) > 0 && p.coefficient(i -1) > 0 )
+					out << " + ";
+				else
+					out << endl;
 			}
 			
 			return out;

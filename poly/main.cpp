@@ -7,6 +7,8 @@ using namespace colorado_edu;
 
 int main(int argc, char **argv)
 {
-	polynomial poly1(4,4);
-	cout << poly1;
+	polynomial poly2(2,2);
+	
+	cout << poly2.numeric_definite_integral(0,2,2) << endl;
+
 }

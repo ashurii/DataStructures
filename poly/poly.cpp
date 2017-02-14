@@ -102,7 +102,7 @@ namespace colorado_edu
 		
 		d_intgrl = (delta_x/2)*poly_eval;
 		
-		return eval(x1);
+		return d_intgrl;
 	}
 	polynomial polynomial::antiderivative( ) const
 	{
@@ -206,5 +206,73 @@ namespace colorado_edu
 //        failure. In this case, the function sets answer to the last guess tried,
 //        success is set to false, and iterations is set to maximum_iterations.
 	//	{}
+	
+	polynomial operator +(const polynomial& p1, const polynomial& p2)
+	{
+		//     POSTCONDITION: return-value is a polynomial with each coefficient
+		//     equal to the sum of the coefficients of p1 & p2 for any given
+		//     exponent.
+		   polynomial poly_sum;
+		   unsigned int i;
+		   unsigned int new_degree;
+		   double new_coefficient;
+		   
+		   if(p1.degree() >= p2.degree())
+				new_degree = p1.degree();
+			else
+				new_degree = p2.degree();
+				
+			for(i = new_degree; i > 0; --i)
+				new_coefficient = p1.coefficient(i) + p2.coefficient(i);
+				poly_sum.assign_coef(new_coefficient, i);
+		   return poly_sum;
+		}
+	   polynomial operator -(const polynomial& p1, const polynomial& p2)
+	{
+		//     POSTCONDITION: return-value is a polynomial with each coefficient
+		//     equal to the difference of the coefficients of p1 & p2 for any given
+		//     exponent.
+		   polynomial poly_diff;
+		   unsigned int i;
+		   unsigned int new_degree;
+		   double new_coefficient;
+		   
+		   if(p1.degree() >= p2.degree())
+				new_degree = p1.degree();
+			else
+				new_degree = p2.degree();
+				
+			for(i = new_degree; i > 0; --i)
+				new_coefficient = p1.coefficient(i) - p2.coefficient(i);
+				poly_diff.assign_coef(new_coefficient, i);
+		   return poly_diff;
+		}
+	polynomial operator *(const polynomial& p1, const polynomial& p2)
+//     PRECONDITION: p1.degree( ) + p2.degree( ) <= MAXIMUM_DEGREE.
+//     POSTCONDITION: Each term of p1 has been multiplied by each term of p2,
+//     and the answer is the sum of all these term-by-term products.
+//     For example, if p1 is 2x^2 + 3x + 4 and p2 is 5x^2 - 1x + 7, then the
+//     return value is 10x^4 + 13x^3 + 31x^2 + 17x + 28.
+	{
+			polynomial poly_multiply;
+			unsigned int new_degree;
+			unsigned int i, j;
+		   double new_coefficient;
+		   
+		   if(p1.degree() >= p2.degree())
+				new_degree = p1.degree();
+			else
+				new_degree = p2.degree();
+				
+			for(i = new_degree; i > 0; --i)
+			{
+				for(j = new_degree; j > 0; --j)
+				{
+				new_coefficient = p1.coefficient(i) * p2.coefficient(j);
+				poly_multiply.assign_coef(new_coefficient, i+j);
+				}
+			}
+		   return poly_multiply;
+	}
 }
 

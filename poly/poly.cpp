@@ -109,38 +109,39 @@ namespace colorado_edu
 	{
 			//Anti-derivative: Take the exponent of the variale+1, divide coefficient by the exponent
 			//for antiderivative of(x^r) = (x/r)^(r+1)
-			polynomial a_poly(0.0,0);
 			
-			double z;	//z is a temporary variable for containin the value of the current coefficient
-			
-			unsigned int i;
-			
-			for(i = degree( ); i > 0; --i)
+		polynomial a_poly((coef[degree( )])/(degree( )+1), degree( )+1);
+		double z;	//z is a temporary variable for containin the value of the current coefficient
+		
+		unsigned int i;
+		
+		
+		for(i = this->degree( ); i > 0; --i)
 		{
-			z = coef[i];	// z assigned to current coefficient
+			z = this->coef[i];	// z assigned to current coefficient
 			z/=(double)(i);			// z divided by the exponent (index) of the current coefficient
 			
-			a_poly.assign_coef((unsigned int)(z), i+1);
+			if(coef[i-1] != 0)
+				a_poly.assign_coef(z, i);
 			
 		}
-		cout << a_poly << "antideriv" << endl;
+		
 		return a_poly;
 	}
 	polynomial polynomial:: derivative( ) const
 	{
 			//The derivative: Take the exponent of the variable-1, multiply the coefficient by the exponent
 		//for , dy/dx(x^r) = rx^(r-1) 
-		polynomial d_poly;			
+		polynomial d_poly((coef[degree( )])*(degree( )-1), degree( )-1);			
 		
 		double z;		// z is a temporary variable for containing the value of the current coefficient
 		
 		unsigned int i;
-		for(i = this->current_degree; i > 0; --i)
+		for(i = this->degree( ); i > 1; --i)
 		{
 			z = coef[i];	// z assigned to current coefficient
 			z*=(double)(i);			// z multiplied by the exponent (index) of the current coefficient
-			d_poly.assign_coef(z, current_degree-1);
-			return d_poly;
+			d_poly.assign_coef(z, i);
 			
 		}
 		
@@ -158,6 +159,8 @@ namespace colorado_edu
 			{
 				if(p.coefficient(i) != 0)
 					out << p.coefficient(i) <<"x^ " << i;	// prints x ^ index of coef[]
+				if((i - 1) != 0 && p.coefficient(i-1) != 0)
+					out << " + ";
 			}
 			
 			return out;
@@ -211,7 +214,7 @@ namespace colorado_edu
 		//     POSTCONDITION: return-value is a polynomial with each coefficient
 		//     equal to the sum of the coefficients of p1 & p2 for any given
 		//     exponent.
-		   polynomial poly_sum;
+		   polynomial poly_sum(0.0,0);
 		   unsigned int i;
 		   unsigned int new_degree;
 		   double new_coefficient;
@@ -220,11 +223,26 @@ namespace colorado_edu
 				new_degree = p1.degree();
 			else
 				new_degree = p2.degree();
+			
 		//---------------------------------------------------
-		
+		/*for(i = degree( ); i > 0; --i)
+		{
+			z = coef[i];	// z assigned to current coefficient
+			z/=(double)(i);			// z divided by the exponent (index) of the current coefficient
+			
+			a_poly.assign_coef(z, i+1);
+			
+		}*/
 			for(i = new_degree; i > 0; --i)
+			{
+				
 				new_coefficient = p1.coefficient(i) + p2.coefficient(i);
-				poly_sum.assign_coef(new_coefficient, i);
+				/*cout << new_coefficient << endl;
+				
+				cout << poly_sum << endl;*/
+				
+			}
+			
 		   return poly_sum;
 		}
 	   polynomial operator -(const polynomial& p1, const polynomial& p2)

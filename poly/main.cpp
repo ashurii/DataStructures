@@ -7,8 +7,17 @@ using namespace colorado_edu;
 
 int main(int argc, char **argv)
 {
+	polynomial poly1(2,3);
 	polynomial poly2(2,2);
 	
-	cout << poly2.eval(2) << endl;
+	polynomial poly3;
+	
+	poly3 = poly1.antiderivative();
+	
+	cout <<  poly1.antiderivative() << endl;
+	
+	
+	
 
+	
 }

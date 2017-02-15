@@ -55,16 +55,17 @@ namespace colorado_edu
 	//     POSTCONDITION: The return value is the value of this polynomial with the
 	//     given value for the variable x.	double eval(double x) const
 	{
-		double eval_result;
+		double eval_result = 0;
 		unsigned int i;
 		double temp;
 		for(i = 0; i <= current_degree; ++i)
 		{
-			if(i > 0 && coefficient(i) > 0)				
-				temp = coefficient(i) * pow(x, i);		
-			else if(i == 0 && coefficient(i) >0)		
-				temp = coefficient(i) * x;						
-			eval_result += temp;						
+			if(coefficient(i) != 0)	
+			{			
+				temp = coefficient(i) * pow(x, i);
+				eval_result += temp;	
+			}
+								
 		}
 		return eval_result;
 	}
@@ -91,16 +92,16 @@ namespace colorado_edu
 		double d_intgrl;
 		double i;
 		
-		delta_x = (x1 - x0)/n;
+		delta_x = ((x1 - x0)/(double)n);
 		poly_eval = eval(x0);
 		
 		
-		for(i = x0; i < x1; i+=delta_x)
+		for(i = x0 + delta_x; i < x1; i+=delta_x)
 			poly_eval+= 2*eval(i);
 		
 		poly_eval += eval(x1);
 		
-		d_intgrl = (delta_x/2)*poly_eval;
+		d_intgrl = (delta_x/2.0)*poly_eval;
 		
 		return d_intgrl;
 	}
@@ -114,13 +115,14 @@ namespace colorado_edu
 			
 			unsigned int i;
 			
-			for(i = this->current_degree; i > 0; --i)
+			for(i = degree( ); i > 0; --i)
 		{
 			z = coef[i];	// z assigned to current coefficient
 			z/=(double)(i);			// z divided by the exponent (index) of the current coefficient
-			a_poly.assign_coef(z, current_degree+1);
+			a_poly.assign_coef(z, degree( )+1);
 			
 		}
+		//cout << a_poly << " out from antidiv" << endl;
 		return a_poly;
 	}
 	polynomial polynomial:: derivative( ) const
@@ -153,12 +155,8 @@ namespace colorado_edu
 			
 			for(i = p.degree(); i > 0; --i)
 			{
-				if(p.coefficient(i) > 0)
-					out << p.coefficient(i) <<" x^"<< i;	// prints x ^ index of coef[]
-				if(p.previous_term(i) > 0 && (i -1) > 0 && p.coefficient(i -1) > 0 )
-					out << " + ";
-				else
-					out << endl;
+				if(p.coefficient(i) != 0)
+					out << p.coefficient(i) <<"x^ " << i;	// prints x ^ index of coef[]
 			}
 			
 			return out;
@@ -221,7 +219,8 @@ namespace colorado_edu
 				new_degree = p1.degree();
 			else
 				new_degree = p2.degree();
-				
+		//---------------------------------------------------
+		
 			for(i = new_degree; i > 0; --i)
 				new_coefficient = p1.coefficient(i) + p2.coefficient(i);
 				poly_sum.assign_coef(new_coefficient, i);

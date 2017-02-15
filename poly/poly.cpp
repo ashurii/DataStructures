@@ -109,7 +109,7 @@ namespace colorado_edu
 	{
 			//Anti-derivative: Take the exponent of the variale+1, divide coefficient by the exponent
 			//for antiderivative of(x^r) = (x/r)^(r+1)
-			polynomial a_poly;
+			polynomial a_poly(0.0,0);
 			
 			double z;	//z is a temporary variable for containin the value of the current coefficient
 			
@@ -120,10 +120,10 @@ namespace colorado_edu
 			z = coef[i];	// z assigned to current coefficient
 			z/=(double)(i);			// z divided by the exponent (index) of the current coefficient
 			
-			a_poly.assign_coef((unsigned int)(z), degree( )+1);
+			a_poly.assign_coef((unsigned int)(z), i+1);
 			
 		}
-		//cout << a_poly << " out from antidiv" << endl;
+		cout << a_poly << "antideriv" << endl;
 		return a_poly;
 	}
 	polynomial polynomial:: derivative( ) const

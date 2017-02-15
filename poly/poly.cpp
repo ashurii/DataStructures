@@ -29,6 +29,8 @@ namespace colorado_edu
 	{
 			assert(exponent <= MAXIMUM_DEGREE);
 			coef[exponent] += amount;
+			
+			cout << coef[exponent] << " from add2c" << endl;
 	}
 	void polynomial::assign_coef(double coefficient, unsigned int exponent)
 	//     PRECONDITION: exponent <= MAXIMUM_DEGREE.
@@ -36,6 +38,7 @@ namespace colorado_edu
 	{
 			assert(exponent <= MAXIMUM_DEGREE);
 			coef[exponent] = coefficient;
+			// needs to check if the pos at expo is more than current degree
 	}
 	void polynomial::clear( )
 	//     POSTCONDITION: All coefficients of this polynomial are set to zero.
@@ -139,7 +142,7 @@ namespace colorado_edu
 		unsigned int i;
 		for(i = this->degree( ); i > 1; --i)
 		{
-			z = coef[i];	// z assigned to current coefficient
+			z = coef[i+1];	// z assigned to current coefficient
 			z*=(double)(i);			// z multiplied by the exponent (index) of the current coefficient
 			d_poly.assign_coef(z, i);
 			
@@ -177,14 +180,14 @@ namespace colorado_edu
 		else
 			return UINT_MAX;
 	}
-//	void polynomial::find_root(
-	//	double& answer,
-	//	bool& success,
-	//	unsigned int& iterations,
-	//	double starting_guess = 0,
-	//	unsigned int maximum_iterations = 100,
-	//	double epsilon = 1e-8
-	//	)const
+	void polynomial::find_root(
+		double& answer,
+		bool& success,
+		unsigned int& iterations,
+		double starting_guess,
+		unsigned int maximum_iterations,
+		double epsilon
+		) const
 //     PRECONDITION: epsilon > 0.
 //     POSTCONDITION: This function uses Newton's method to search for a root of
 //     the polynomial (i.e., a value of x for which the polynomial is zero).
@@ -207,39 +210,35 @@ namespace colorado_edu
 //        The maximum number of iterations is reached without success or flat
 //        failure. In this case, the function sets answer to the last guess tried,
 //        success is set to false, and iterations is set to maximum_iterations.
-	//	{}
+		{
+				assert(epsilon > 0);
+				
+		}
 	
 	polynomial operator +(const polynomial& p1, const polynomial& p2)
 	{
 		//     POSTCONDITION: return-value is a polynomial with each coefficient
 		//     equal to the sum of the coefficients of p1 & p2 for any given
 		//     exponent.
-		   polynomial poly_sum(0.0,0);
+		
 		   unsigned int i;
 		   unsigned int new_degree;
 		   double new_coefficient;
+		   
 		   
 		   if(p1.degree() >= p2.degree())
 				new_degree = p1.degree();
 			else
 				new_degree = p2.degree();
 			
-		//---------------------------------------------------
-		/*for(i = degree( ); i > 0; --i)
-		{
-			z = coef[i];	// z assigned to current coefficient
-			z/=(double)(i);			// z divided by the exponent (index) of the current coefficient
+			new_coefficient = p1.coefficient(new_degree) + p2.coefficient(new_degree);
+			polynomial poly_sum(new_coefficient , new_degree);
 			
-			a_poly.assign_coef(z, i+1);
-			
-		}*/
-			for(i = new_degree; i > 0; --i)
+			for(i = new_degree-1; i > 0; --i)
 			{
 				
 				new_coefficient = p1.coefficient(i) + p2.coefficient(i);
-				/*cout << new_coefficient << endl;
-				
-				cout << poly_sum << endl;*/
+				poly_sum.assign_coef(new_coefficient, i);
 				
 			}
 			
@@ -250,19 +249,27 @@ namespace colorado_edu
 		//     POSTCONDITION: return-value is a polynomial with each coefficient
 		//     equal to the difference of the coefficients of p1 & p2 for any given
 		//     exponent.
-		   polynomial poly_diff;
-		   unsigned int i;
+			unsigned int i;
 		   unsigned int new_degree;
 		   double new_coefficient;
+		   
 		   
 		   if(p1.degree() >= p2.degree())
 				new_degree = p1.degree();
 			else
 				new_degree = p2.degree();
+			
+			new_coefficient = p1.coefficient(new_degree) - p2.coefficient(new_degree);
+			polynomial poly_diff(new_coefficient , new_degree);
+			
+			for(i = new_degree-1; i > 0; --i)
+			{
 				
-			for(i = new_degree; i > 0; --i)
 				new_coefficient = p1.coefficient(i) - p2.coefficient(i);
 				poly_diff.assign_coef(new_coefficient, i);
+				
+			}
+			
 		   return poly_diff;
 		}
 	polynomial operator *(const polynomial& p1, const polynomial& p2)
@@ -272,25 +279,36 @@ namespace colorado_edu
 //     For example, if p1 is 2x^2 + 3x + 4 and p2 is 5x^2 - 1x + 7, then the
 //     return value is 10x^4 + 13x^3 + 31x^2 + 17x + 28.
 	{
-			polynomial poly_multiply;
-			unsigned int new_degree;
-			unsigned int i, j;
-		   double new_coefficient;
+			unsigned int i,j;
+			unsigned int new_degree = 0;
+			double new_coefficient = 0;
 		   
-		   if(p1.degree() >= p2.degree())
-				new_degree = p1.degree();
-			else
-				new_degree = p2.degree();
-				
-			for(i = new_degree; i > 0; --i)
+			new_degree = p1.degree( ) + p2.degree( );
+			
+			new_coefficient = p1.coefficient(p1.degree( )) * p2.coefficient(p2.degree( ));
+			polynomial poly_multi(0, new_degree);
+			
+			for(i = p1.degree( ); i >  0; --i)
 			{
-				for(j = new_degree; j > 0; --j)
+				if (p1.coefficient(i) != 0)
 				{
-				new_coefficient = p1.coefficient(i) * p2.coefficient(j);
-				poly_multiply.assign_coef(new_coefficient, i+j);
+					for(j = p2.degree( ); j > 0; --j)
+					{
+						
+						if (p2.coefficient(j) != 0){
+						new_coefficient = p1.coefficient(i) * p2.coefficient(j);
+						new_degree = i + j;
+						poly_multi.add_to_coef(new_coefficient, new_degree);
+						}
+						/*for(k = new_degree; k > 0; --k)
+						{
+						new_coefficient = p1.coefficient(i) * p2.coefficient(j);
+						poly_multi.assign_coef(new_coefficient, k);
+						}*/
+					}
 				}
 			}
-		   return poly_multiply;
+		   return poly_multi;
 	}
 }
 

@@ -162,6 +162,7 @@
 
 #ifndef POLY_H
 #define POLY_H
+#include <cstdlib>
 #include <iostream>  // Provides ostream
 namespace colorado_edu
 {
@@ -193,6 +194,14 @@ namespace colorado_edu
 	unsigned int next_term(unsigned int e) const;
 	double numeric_definite_integral(double x0, double x1, unsigned int n);
 	unsigned int previous_term(unsigned int e) const;
+	void find_root(
+    double& answer,
+     bool& success,
+     unsigned int& iterations,
+     double starting_guess = 0,
+     unsigned int maximum_iterations = 100,
+     double epsilon = 1e-8
+     ) const;
 	
 	// CONSTANT OPERATORS
 	double operator( ) (double x) const { return eval(x); }

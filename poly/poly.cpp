@@ -119,7 +119,8 @@ namespace colorado_edu
 		{
 			z = coef[i];	// z assigned to current coefficient
 			z/=(double)(i);			// z divided by the exponent (index) of the current coefficient
-			a_poly.assign_coef(z, degree( )+1);
+			
+			a_poly.assign_coef((unsigned int)(z), degree( )+1);
 			
 		}
 		//cout << a_poly << " out from antidiv" << endl;

@@ -5,22 +5,22 @@
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\poly\main.cpp" Name="FileName"/>
-      <int Value="3" Name="FirstVisibleLine"/>
-      <int Value="13" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="7" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\poly\poly.h" Name="FileName"/>
-      <int Value="148" Name="FirstVisibleLine"/>
-      <int Value="164" Name="CurrentLine"/>
+      <int Value="184" Name="FirstVisibleLine"/>
+      <int Value="157" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\poly\poly.cpp" Name="FileName"/>
-      <int Value="198" Name="FirstVisibleLine"/>
-      <int Value="211" Name="CurrentLine"/>
+      <int Value="147" Name="FirstVisibleLine"/>
+      <int Value="193" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

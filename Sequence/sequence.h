@@ -93,6 +93,7 @@ namespace main_savitch_3
 		bool is_item() const;
         // CONSTANT MEMBER FUNCTIONSlitt
         value_type current( ) const { return current_index;}
+		double get_data(int index);
     private:
         value_type data[CAPACITY];
         size_type used;

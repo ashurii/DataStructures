@@ -84,3 +84,8 @@ void sequence::remove(const value_type& target)
 		remove_current();
 		}
 }
+	double sequence::get_data(int index)
+	{
+		return data[index];
+	}
+}

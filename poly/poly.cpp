@@ -1,3 +1,4 @@
+//Written by Ashly Sarah Altman
 
 #include <math.h>
 #include <cassert>
@@ -30,7 +31,7 @@ namespace colorado_edu
 			assert(exponent <= MAXIMUM_DEGREE);
 			coef[exponent] += amount;
 			
-			cout << coef[exponent] << " from add2c" << endl;
+			
 	}
 	void polynomial::assign_coef(double coefficient, unsigned int exponent)
 	//     PRECONDITION: exponent <= MAXIMUM_DEGREE.
@@ -54,6 +55,16 @@ namespace colorado_edu
 		else
 			return 0;
 		}
+	bool polynomial::is_zero( ) const
+	{
+		bool result = false;
+		for(unsigned int i = degree( ); i > 0; --i)
+			if(coefficient(i) == 0)
+				result = true;
+		return result;
+			
+	}
+	
 	double polynomial::eval(double x) const
 	//     POSTCONDITION: The return value is the value of this polynomial with the
 	//     given value for the variable x.	double eval(double x) const
@@ -77,10 +88,15 @@ namespace colorado_edu
 	//     than e such that coefficient(n) != 0.
 	//     If there is no such term, then the return value is zero.
 	{
-		if(coef[e+1] > 0)
-			return coef[e+1];
-		else
-			return 0;
+		unsigned int answer = 0;
+		for(unsigned int i = degree( ); i >0; --i){
+			if(coef[i] != 0 && i > e)
+				
+				answer = i;
+			else
+				answer = 0;
+				}
+			return answer;
 	}
 	double polynomial::numeric_definite_integral(double x0, double x1, unsigned int n)
 	//     POSTCONDITION: Returns the value of the definite integral computed from
@@ -108,6 +124,18 @@ namespace colorado_edu
 		
 		return d_intgrl;
 	}
+	double polynomial::definite_integral(double x0, double x1) const 
+	//     POSTCONDITION: Returns the value of the definite integral computed from
+	//     x0 to x1.  The answer is computed analytically.
+	{
+		// definite integral: antiderivative of polynomial at x1 - antiderivative at x0
+		polynomial eval_poly;
+		eval_poly = antiderivative( );
+		
+		double result = 0;
+		result = eval_poly.eval(x1) - eval_poly.eval(x0);
+		return result;
+	}
 	polynomial polynomial::antiderivative( ) const
 	{
 			//Anti-derivative: Take the exponent of the variale+1, divide coefficient by the exponent
@@ -124,8 +152,8 @@ namespace colorado_edu
 			z = this->coef[i];	// z assigned to current coefficient
 			z/=(double)(i);			// z divided by the exponent (index) of the current coefficient
 			
-			if(coef[i-1] != 0)
-				a_poly.assign_coef(z, i);
+			if(coef[i] != 0)
+				a_poly.assign_coef(z, i+1);
 			
 		}
 		
@@ -142,9 +170,9 @@ namespace colorado_edu
 		unsigned int i;
 		for(i = this->degree( ); i > 1; --i)
 		{
-			z = coef[i+1];	// z assigned to current coefficient
+			z = coef[i];	// z assigned to current coefficient
 			z*=(double)(i);			// z multiplied by the exponent (index) of the current coefficient
-			d_poly.assign_coef(z, i);
+			d_poly.assign_coef(z, i-1);
 			
 		}
 		
@@ -175,10 +203,16 @@ namespace colorado_edu
 	//     If there is no such term, then the return value is UINT_MAX
 	//     from <climits>.
 	{
-		if(coef[e-1] > 0)
-			return coef[e-1];
-		else
-			return UINT_MAX;
+		unsigned int answer;
+		for(unsigned int i = degree( ); i >0; --i)
+		{
+			if(coef[i] != 0 && i < e)
+				answer = i;
+			else
+				answer = UINT_MAX;
+		}
+	
+		return answer;
 	}
 	void polynomial::find_root(
 		double& answer,
@@ -300,11 +334,7 @@ namespace colorado_edu
 						new_degree = i + j;
 						poly_multi.add_to_coef(new_coefficient, new_degree);
 						}
-						/*for(k = new_degree; k > 0; --k)
-						{
-						new_coefficient = p1.coefficient(i) * p2.coefficient(j);
-						poly_multi.assign_coef(new_coefficient, k);
-						}*/
+
 					}
 				}
 			}

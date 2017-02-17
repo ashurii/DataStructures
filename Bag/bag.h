@@ -30,6 +30,8 @@ public:
 	//CONSTANT MEMBER FUNCTIONS
 	size_type size() const{ return used; }
 	size_type count(const value_type& target) const;
+	void get_ages(bag& ages);
+	void check_ages(bag& ages);
 	//MODIFICATION MEMBER FUNCTIONS
 	bool erase_one(const value_type& target);
 	size_type erase(const value_type& target);

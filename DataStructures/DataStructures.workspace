@@ -8,7 +8,9 @@
   <Project Name="Lab_1b_clock" Path="Lab_1b_clock/Lab_1b_clock.project" Active="No"/>
   <Project Name="Lab_1b_cards" Path="Lab_1b_cards/Lab_1b_cards.project" Active="No"/>
   <Project Name="Polynomial" Path="Polynomial/Polynomial.project" Active="No"/>
-  <Project Name="Throttle" Path="Throttle/Throttle.project" Active="Yes"/>
+  <Project Name="Throttle" Path="Throttle/Throttle.project" Active="No"/>
+  <Project Name="Dynamic_Bag" Path="../Dynamic_Bag/Dynamic_Bag.project" Active="Yes"/>
+  <Project Name="Bag" Path="../Bag/Bag.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -21,6 +23,8 @@
       <Project Name="Lab_1b_cards" ConfigName="Debug"/>
       <Project Name="Polynomial" ConfigName="Debug"/>
       <Project Name="Throttle" ConfigName="Debug"/>
+      <Project Name="Dynamic_Bag" ConfigName="Debug"/>
+      <Project Name="Bag" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -33,6 +37,8 @@
       <Project Name="Lab_1b_cards" ConfigName="Release"/>
       <Project Name="Polynomial" ConfigName="Release"/>
       <Project Name="Throttle" ConfigName="Release"/>
+      <Project Name="Dynamic_Bag" ConfigName="Release"/>
+      <Project Name="Bag" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

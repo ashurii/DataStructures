@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=Dynamic_Bag
 ConfigurationName      :=Debug
-WorkspacePath          :=C:/Users/Zefiris/Documents/GitHub/DataStructures/DataStructures
-ProjectPath            :=C:/Users/Zefiris/Documents/GitHub/DataStructures/DataStructures/Dynamic_Bag
+WorkspacePath          :=C:/Users/Zefiris/Documents/DataStructures
+ProjectPath            :=C:/Users/Zefiris/Documents/GitHub/DataStructures/Dynamic_Bag
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Zefiris
-Date                   :=17/02/2017
+Date                   :=18/02/2017
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=C:/MinGW/bin/g++.exe
 SharedObjectLinkerName :=C:/MinGW/bin/g++.exe -shared -fPIC
@@ -94,7 +94,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Zefiris/Documents/GitHub/DataStructures/DataStructures/Dynamic_Bag/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Zefiris/Documents/GitHub/DataStructures/Dynamic_Bag/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
@@ -102,7 +102,7 @@ $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 $(IntermediateDirectory)/bag.cpp$(ObjectSuffix): bag.cpp $(IntermediateDirectory)/bag.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Zefiris/Documents/GitHub/DataStructures/DataStructures/Dynamic_Bag/bag.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bag.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Zefiris/Documents/GitHub/DataStructures/Dynamic_Bag/bag.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/bag.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/bag.cpp$(DependSuffix): bag.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/bag.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/bag.cpp$(DependSuffix) -MM bag.cpp
 

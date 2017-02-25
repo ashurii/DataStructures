@@ -1,7 +1,13 @@
 #include <stdio.h>
+#include <cstdlib>
+#include <iostream>
+#include "bag.h"
 
+using namespace std;
+using namespace main_savitch_5;
 int main(int argc, char **argv)
 {
-	printf("hello world\n");
-	return 0;
+	int *p;
+	*p = 0;
+	
 }

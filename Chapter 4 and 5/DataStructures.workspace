@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="DataStructures" Database="" Version="10.0.0">
-  <Project Name="Bag" Path="../GitHub/DataStructures/Bag/Bag.project" Active="No"/>
-  <Project Name="Dynamic_Bag" Path="../GitHub/DataStructures/Dynamic_Bag/Dynamic_Bag.project" Active="No"/>
-  <Project Name="DynamicSet" Path="../GitHub/DataStructures/set/set.project" Active="No"/>
-  <Project Name="Node" Path="Node/Node.project" Active="No"/>
-  <Project Name="LinkedList" Path="LinkedList/LinkedList.project" Active="Yes"/>
+  <Project Name="Node" Path="Node/Node.project" Active="Yes"/>
+  <Project Name="LinkedList" Path="LinkedList/LinkedList.project" Active="No"/>
   <Project Name="LinkedBag" Path="LinkedBag/LinkedBag.project" Active="No"/>
-  <Project Name="Sequence" Path="../GitHub/DataStructures/Sequence/Sequence.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>

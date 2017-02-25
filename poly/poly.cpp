@@ -57,10 +57,11 @@ namespace colorado_edu
 		}
 	bool polynomial::is_zero( ) const
 	{
-		bool result = false;
+		bool result = true;
 		for(unsigned int i = degree( ); i > 0; --i)
-			if(coefficient(i) == 0)
-				result = true;
+			if(coefficient(i) != 0)
+				result = false;
+		
 		return result;
 			
 	}

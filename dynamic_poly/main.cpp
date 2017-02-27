@@ -31,7 +31,7 @@ void poly_run( )
 
 	
 	cout << poly1 << endl;
-	
+	cout << endl;
 	polynomial poly2;
 	poly2.assign_coef(2, 3);
 	
@@ -40,7 +40,7 @@ void poly_run( )
 	
 	
 	
-	
+	cout << endl;
 	cout << "Poly1 + Poly2 :\t" << poly1 + poly2<< endl;
 //	cout << endl;
 //	cout << "Poly1 - Poly2:\t" << poly1 -poly2 << endl;

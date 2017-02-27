@@ -71,7 +71,7 @@ namespace colorado_edu
 			coef[exponent] = coefficient;
 			
 			current_degree = exponent;
-			// needs to check if the pos at expo is more than current degree
+			
 	}
 	void polynomial::clear( )
 	//     POSTCONDITION: All coefficients of this polynomial are set to zero.
@@ -263,6 +263,7 @@ namespace colorado_edu
 		//     equal to the sum of the coefficients of p1 & p2 for any given
 		//     exponent.
 		
+		
 		   unsigned int i;
 		   unsigned int new_degree;
 		   double new_coefficient;
@@ -273,15 +274,18 @@ namespace colorado_edu
 			else
 				new_degree = p2.degree();
 			
-			new_coefficient = p1.coefficient(new_degree) + p2.coefficient(new_degree);
+			
 			polynomial poly_sum;
 			
-			for(i = new_degree-1; i > 0; --i)
+			
+			for(i = new_degree; i > 0; --i)
 			{
 				
 				new_coefficient = p1.coefficient(i) + p2.coefficient(i);
-				poly_sum.assign_coef(new_coefficient, i);
 				
+				if(new_coefficient != 0)
+					poly_sum.assign_coef(new_coefficient, i);
+				cout << "+operator out:\t" << poly_sum << endl;
 			}
 			
 		   return poly_sum;
@@ -304,11 +308,12 @@ namespace colorado_edu
 			new_coefficient = p1.coefficient(new_degree) - p2.coefficient(new_degree);
 			polynomial poly_diff;
 			
-			for(i = new_degree-1; i > 0; --i)
+			for(i = new_degree; i > 0; --i)
 			{
 				
 				new_coefficient = p1.coefficient(i) - p2.coefficient(i);
-				poly_diff.assign_coef(new_coefficient, i);
+				if(new_coefficient != 0)
+					poly_diff.assign_coef(new_coefficient, i);
 				
 			}
 			

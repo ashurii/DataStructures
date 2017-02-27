@@ -184,6 +184,7 @@ namespace colorado_edu
 	void add_to_coef(double amount, unsigned int exponent);
 	void assign_coef(value_type coefficient, unsigned int exponent);
 	void clear( );
+	void reserve(size_t number);
 	
 	// CONSTANT MEMBER FUNCTIONS
      polynomial antiderivative( ) const;
@@ -199,6 +200,7 @@ namespace colorado_edu
 	value_type numeric_definite_integral(value_type x0, value_type x1, unsigned int n);
 	unsigned int previous_term(unsigned int e) const;
 	
+	void operator +=(const polynomial& addend);
 	polynomial& operator =(const polynomial& source);
 	polynomial& operator =(double a0);
 	// CONSTANT OPERATORS

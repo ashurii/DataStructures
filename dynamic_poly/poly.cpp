@@ -14,12 +14,20 @@ namespace colorado_edu
 	const polynomial::size_type polynomial::DEFAULT_DEGREE;
 	polynomial::polynomial( )
 	{
-		*coef = 0;
+		maximum_degree = DEFAULT_DEGREE;
+		
+		coef = new value_type[maximum_degree];
+		for(unsigned int i = maximum_degree-1; i > 0; --i)
+			coef[i] = 0;
 		current_degree = 0;
 	}
 	polynomial::polynomial(double a0)
 	{
-		*coef = a0;
+		maximum_degree = DEFAULT_DEGREE;
+		coef = new value_type[maximum_degree];
+		coef[0] = a0;
+		for(unsigned int i = maximum_degree-1; i > 0; --i)
+			coef[i] = 0;
 		current_degree = 0;
 	}
 	polynomial::~polynomial( )
@@ -31,17 +39,38 @@ namespace colorado_edu
 	//     POSTCONDITION: Adds the given amount to the coefficient of the
 	//     specified exponent.
 	{
-			
+			if(exponent > maximum_degree)
+				reserve(exponent);
 			coef[exponent] += amount;
 			
+			current_degree = exponent;
 			
+	}
+	void polynomial::reserve(size_t new_capacity)
+	{
+		value_type *larger_array;
+		
+		if(new_capacity == maximum_degree)
+			return;
+			
+		if(new_capacity < maximum_degree)
+			new_capacity = maximum_degree;
+			
+		larger_array = new value_type[new_capacity];
+		copy(coef, coef + degree(), larger_array);
+		delete [ ] coef;
+		coef = larger_array;
+		current_degree = new_capacity;
 	}
 	void polynomial::assign_coef(double coefficient, unsigned int exponent)
 	//     PRECONDITION: exponent <= MAXIMUM_DEGREE.
 	//     POSTCONDITION: Sets the coefficient for the specified exponent.
 	{
-			
+			if(exponent > maximum_degree)
+				reserve(exponent);
 			coef[exponent] = coefficient;
+			
+			current_degree = exponent;
 			// needs to check if the pos at expo is more than current degree
 	}
 	void polynomial::clear( )
@@ -50,6 +79,7 @@ namespace colorado_edu
 			unsigned int i;
 			for(i = 0; i < degree( ); ++i)
 				coef[i] = 0;
+			current_degree = 0;
 	}
 	double polynomial:: coefficient(unsigned int exponent) const
 	{
@@ -218,7 +248,14 @@ namespace colorado_edu
 	
 		return answer;
 	}
-	
+	void polynomial::operator +=(const polynomial& addend)
+	{
+		if(degree( ) + addend.degree( ) > maximum_degree)
+			reserve(degree( ) + addend.degree( ));
+			
+		copy(addend.coef, addend.coef + addend.degree( ), coef + degree( ));
+		current_degree += addend.degree( );
+	}
 	
 	polynomial operator +(const polynomial& p1, const polynomial& p2)
 	{

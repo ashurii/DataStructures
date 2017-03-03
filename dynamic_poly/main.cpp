@@ -38,27 +38,29 @@ void poly_run( )
 	cout << "Poly 2:\t" <<poly2 << endl;
 	
 	
-	
+	polynomial poly3;
+	poly3 = poly1;
+	cout << "poly 3 " << poly3 << endl;
 	
 	cout << endl;
 	cout << "Poly1 + Poly2 :\t" << poly1 + poly2<< endl;
-//	cout << endl;
-//	cout << "Poly1 - Poly2:\t" << poly1 -poly2 << endl;
-//	cout << endl;
-//	cout << "poly1 * poly2 :\t" << poly1 * poly2<< endl;
-//	cout << endl;
-//	cout << "Derivative of Poly1:\t"<< poly1.derivative() << endl;
-//	cout << endl;
-//	cout << "Antiderivative of Poly1:\t" << poly1.antiderivative() << endl;
-//	cout << endl;
-//	cout << "Definite Integral of Poly1 from 0 to 2:\t" << poly1.definite_integral(0,2) << endl;
-//	cout << endl;
-//	cout << "Numeric Definite Integral of Poly1,\n from 0 to 2 with 4 rectangles:\t" << poly1.numeric_definite_integral(0,2,4) << endl;
-//	cout << endl;
-//	cout << "poly1.next_term(2)" << poly1.next_term(2) << endl;
-//	cout << endl;
-//	cout << "poly1.previous_term(6)" << poly1.previous_term(6) << endl;
-//	cout << endl;
+	cout << endl;
+	cout << "Poly1 - Poly2:\t" << poly1 -poly2 << endl;
+	cout << endl;
+	cout << "poly1 * poly2 :\t" << poly1 * poly2<< endl;
+	cout << endl;
+	cout << "Derivative of Poly1:\t"<< poly1.derivative() << endl;
+	cout << endl;
+	cout << "Antiderivative of Poly1:\t" << poly1.antiderivative() << endl;
+	cout << endl;
+	cout << "Definite Integral of Poly1 from 0 to 2:\t" << poly1.definite_integral(0,2) << endl;
+	cout << endl;
+	cout << "Numeric Definite Integral of Poly1,\n from 0 to 2 with 4 rectangles:\t" << poly1.numeric_definite_integral(0,2,4) << endl;
+	cout << endl;
+	cout << "poly3.next_term(2)" << poly3.next_term(2) << endl;
+	cout << endl;
+	cout << "poly3.previous_term(6)" << poly3.previous_term(6) << endl;
+	cout << endl;
 }
 
 int main(int argc, char **argv)

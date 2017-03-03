@@ -33,7 +33,7 @@ public:
 	//MODIFICATION MEMBER FUNCTIONS
 	bool erase_one(const value_type& target);
 	size_type erase(const value_type& target);
-	void insert(const value_type& entry);
+	void set_insert(const value_type& entry);
 	
 	//OPERATOR OVERLOADERS
 	void operator +=(const set& addend);
@@ -41,6 +41,7 @@ public:
 	
 private:
 	node*  head_ptr;
+	node* tail_ptr;
 	size_type many_nodes;
 };
 //Non Member functions for the set class

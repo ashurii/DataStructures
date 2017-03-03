@@ -6,12 +6,13 @@
   <Project Name="point" Path="point/point.project" Active="No"/>
   <Project Name="Bag" Path="Bag/Bag.project" Active="No"/>
   <Project Name="Multiset" Path="Multiset/Multiset.project" Active="No"/>
-  <Project Name="set" Path="set/set.project" Active="No"/>
   <Project Name="poly" Path="poly/poly.project" Active="No"/>
   <Project Name="PointerTest" Path="PointerTest/PointerTest.project" Active="No"/>
   <Project Name="Node" Path="Chapter 4 and 5/Node/Node.project" Active="No"/>
   <Project Name="Node1" Path="Node1/Node1.project" Active="No"/>
-  <Project Name="dynamic_poly" Path="dynamic_poly/dynamic_poly.project" Active="Yes"/>
+  <Project Name="dynamic_poly" Path="dynamic_poly/dynamic_poly.project" Active="No"/>
+  <Project Name="LinkedBag" Path="Chapter 4 and 5/LinkedBag/LinkedBag.project" Active="No"/>
+  <Project Name="LinkedList" Path="Chapter 4 and 5/LinkedList/LinkedList.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -27,6 +28,8 @@
       <Project Name="Node" ConfigName="Debug"/>
       <Project Name="Node1" ConfigName="Debug"/>
       <Project Name="dynamic_poly" ConfigName="Debug"/>
+      <Project Name="LinkedBag" ConfigName="Debug"/>
+      <Project Name="LinkedList" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -42,6 +45,8 @@
       <Project Name="Node" ConfigName="Release"/>
       <Project Name="Node1" ConfigName="Release"/>
       <Project Name="dynamic_poly" ConfigName="Release"/>
+      <Project Name="LinkedBag" ConfigName="Release"/>
+      <Project Name="LinkedList" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

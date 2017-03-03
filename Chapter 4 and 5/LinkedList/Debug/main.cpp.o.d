@@ -1,3 +1,5 @@
-Debug/main.cpp.o: main.cpp bag.h
+Debug/main.cpp.o: main.cpp set.h node1.h
 
-bag.h:
+set.h:
+
+node1.h:

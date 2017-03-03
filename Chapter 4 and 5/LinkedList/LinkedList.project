@@ -96,7 +96,7 @@
     <File Name="main.cpp"/>
     <File Name="node1.cpp"/>
     <File Name="node1.h"/>
-    <File Name="../LinkedBag/bag.h"/>
-    <File Name="../LinkedBag/bag.cpp"/>
+    <File Name="set.cpp"/>
+    <File Name="set.h"/>
   </VirtualDirectory>
 </CodeLite_Project>

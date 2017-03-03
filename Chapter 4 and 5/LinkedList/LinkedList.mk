@@ -5,7 +5,7 @@
 ## Debug
 ProjectName            :=LinkedList
 ConfigurationName      :=Debug
-WorkspacePath          :="C:/Users/Ashly Altman/Documents/GitHub/DataStructures/Chapter 4 and 5"
+WorkspacePath          :="C:/Users/Ashly Altman/Documents/GitHub/DataStructures"
 ProjectPath            :="C:/Users/Ashly Altman/Documents/GitHub/DataStructures/Chapter 4 and 5/LinkedList"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Ashly Altman
-Date                   :=21/02/2017
+Date                   :=02/03/2017
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=g++
 SharedObjectLinkerName :=g++ -shared -fPIC
@@ -62,7 +62,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/node1.cpp$(ObjectSuffix) $(IntermediateDirectory)/up_LinkedBag_bag.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/node1.cpp$(ObjectSuffix) $(IntermediateDirectory)/set.cpp$(ObjectSuffix) 
 
 
 
@@ -109,13 +109,13 @@ $(IntermediateDirectory)/node1.cpp$(DependSuffix): node1.cpp
 $(IntermediateDirectory)/node1.cpp$(PreprocessSuffix): node1.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/node1.cpp$(PreprocessSuffix) node1.cpp
 
-$(IntermediateDirectory)/up_LinkedBag_bag.cpp$(ObjectSuffix): ../LinkedBag/bag.cpp $(IntermediateDirectory)/up_LinkedBag_bag.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Ashly Altman/Documents/GitHub/DataStructures/Chapter 4 and 5/LinkedBag/bag.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_LinkedBag_bag.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/up_LinkedBag_bag.cpp$(DependSuffix): ../LinkedBag/bag.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/up_LinkedBag_bag.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/up_LinkedBag_bag.cpp$(DependSuffix) -MM ../LinkedBag/bag.cpp
+$(IntermediateDirectory)/set.cpp$(ObjectSuffix): set.cpp $(IntermediateDirectory)/set.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Ashly Altman/Documents/GitHub/DataStructures/Chapter 4 and 5/LinkedList/set.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/set.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/set.cpp$(DependSuffix): set.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/set.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/set.cpp$(DependSuffix) -MM set.cpp
 
-$(IntermediateDirectory)/up_LinkedBag_bag.cpp$(PreprocessSuffix): ../LinkedBag/bag.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/up_LinkedBag_bag.cpp$(PreprocessSuffix) ../LinkedBag/bag.cpp
+$(IntermediateDirectory)/set.cpp$(PreprocessSuffix): set.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/set.cpp$(PreprocessSuffix) set.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

@@ -19,6 +19,7 @@ namespace colorado_edu
 		coef = new value_type[maximum_degree];
 		for(unsigned int i = maximum_degree-1; i > 0; --i)
 			coef[i] = 0;
+		coef[0] = 0;
 		current_degree = 0;
 	}
 	polynomial::polynomial(double a0)
@@ -70,7 +71,8 @@ namespace colorado_edu
 				reserve(exponent);
 			coef[exponent] = coefficient;
 			
-			current_degree = exponent;
+			if(current_degree < exponent)
+				current_degree = exponent;
 			
 	}
 	void polynomial::clear( )
@@ -165,6 +167,7 @@ namespace colorado_edu
 		// definite integral: antiderivative of polynomial at x1 - antiderivative at x0
 		polynomial eval_poly;
 		eval_poly = antiderivative( );
+		
 		
 		double result = 0;
 		result = eval_poly.eval(x1) - eval_poly.eval(x0);
@@ -369,7 +372,7 @@ namespace colorado_edu
 			maximum_degree = source.maximum_degree;
 		}
 		current_degree = source.current_degree;
-		copy(source.coef, source.coef + current_degree, coef);
+		copy(source.coef, source.coef + (current_degree + 1), coef);
 		return *this;
 	}
 	polynomial& polynomial::operator =(double a0)

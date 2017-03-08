@@ -5,7 +5,7 @@
 ## Debug
 ProjectName            :=LinkedList
 ConfigurationName      :=Debug
-WorkspacePath          :="C:/Users/Ashly Altman/Documents/GitHub/DataStructures"
+WorkspacePath          :="C:/Users/Ashly Altman/Documents/GitHub/DataStructures/Chapter 4 and 5"
 ProjectPath            :="C:/Users/Ashly Altman/Documents/GitHub/DataStructures/Chapter 4 and 5/LinkedList"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Ashly Altman
-Date                   :=02/03/2017
+Date                   :=07/03/2017
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=g++
 SharedObjectLinkerName :=g++ -shared -fPIC

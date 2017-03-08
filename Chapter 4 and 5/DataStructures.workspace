@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="DataStructures" Database="" Version="10.0.0">
-  <Project Name="Node" Path="Node/Node.project" Active="Yes"/>
-  <Project Name="LinkedList" Path="LinkedList/LinkedList.project" Active="No"/>
+  <Project Name="Node" Path="Node/Node.project" Active="No"/>
+  <Project Name="LinkedList" Path="LinkedList/LinkedList.project" Active="Yes"/>
   <Project Name="LinkedBag" Path="LinkedBag/LinkedBag.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">

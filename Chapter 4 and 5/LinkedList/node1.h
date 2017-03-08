@@ -146,7 +146,7 @@ namespace main_savitch_5
 
 	// Constant member function to retrieve the current data:
 	value_type data( ) const { return data_field; }
-
+	
 	// Two slightly different member functions to retreive
 	// the current link:
 	const node* link( ) const { return link_field; }
@@ -170,6 +170,7 @@ namespace main_savitch_5
     void list_remove(node* previous_ptr);
     void list_clear(node*& head_ptr);
     void list_copy(const node* source_ptr, node*& head_ptr, node*& tail_ptr);
+	
 }
 
 #endif

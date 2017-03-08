@@ -1,5 +1,6 @@
 #ifndef MAIN_SAVITCH_set_H  
 #define MAIN_SAVITCH_set_H
+#include <iostream>
 #include <cstdlib> // Provides size_t and NULL
 #include "node1.h"
 
@@ -27,6 +28,7 @@ public:
 		many_nodes = source.many_nodes;
 	}
 		//CONSTANT MEMBER FUNCTIONS
+	void print_set() const;
 	size_type size() const{ return many_nodes; }
 	bool contains(const value_type& target) const;
 	value_type grab( )const;
@@ -38,14 +40,14 @@ public:
 	//OPERATOR OVERLOADERS
 	void operator +=(const set& addend);
 	void operator =(const set& source);
-	
+	friend std::ostream& operator << (std::ostream& out, const set& s);
 private:
 	node*  head_ptr;
 	node* tail_ptr;
 	size_type many_nodes;
 };
 //Non Member functions for the set class
-
+std::ostream& operator << (std::ostream& out, const set& s);
 set operator +(const set& b1, const set& b2);
 }
 #endif // set_H

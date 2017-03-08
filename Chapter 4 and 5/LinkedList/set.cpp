@@ -1,11 +1,15 @@
 #include "set.h"
 //#include "node1.h"
 #include <cassert>
+#include <iostream>
 
+using namespace std;
 namespace main_savitch_5
 {
 set::set()
 {
+	head_ptr = NULL;
+	many_nodes = 0;
 }
 
 set::~set()
@@ -34,6 +38,7 @@ void set::set_insert(const value_type& entry)
 	}	
 	else
 		return;
+	
 }
 set::value_type set::grab() const
 {
@@ -45,7 +50,12 @@ set::value_type set::grab() const
 	cursor = list_locate(head_ptr, i);
 	return cursor->data( );
 }
-
+void set::print_set() const
+{
+		const node *cursor; // This is a const node* because it won't change the list's nodes
+		for(cursor = head_ptr; cursor != NULL; cursor = cursor->link())
+			cout << cursor->data() << " ,";
+}
 void set::operator =(const set& source)
 {
 	node *tail_ptr;
@@ -62,18 +72,25 @@ void set::operator +=(const set& addend)
 	node* cursor; //cursor for this list
 	
 	
-	for(cursor = addend.head_ptr; cursor->link() != NULL; cursor = cursor->link())
-		list_insert(tail_ptr, cursor->data( ));
+	for(cursor = addend.head_ptr; cursor!= NULL; cursor = cursor->link())
+		set_insert(cursor->data( ));
 }
 bool set::erase_one(const value_type& target)
 {
 	node *target_ptr;
 	target_ptr = list_search(head_ptr, target);
-	if (target_ptr == NULL);
+	if (target_ptr == NULL)
 		return false; //Target is not in the set
 	target_ptr->set_data( head_ptr->data( ));
 	list_head_remove(head_ptr);
 	--many_nodes;
 	return true;
+}
+ostream& operator<< (ostream& out, const set& set1)
+{
+	node* cursor;
+	for(cursor = set1.head_ptr; cursor != NULL; cursor = cursor->link())
+		out << cursor->data() << endl;	
+	return out;
 }
 }

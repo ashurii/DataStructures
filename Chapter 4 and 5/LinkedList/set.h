@@ -12,11 +12,12 @@
 
 namespace main_savitch_5
 {
+template <class Item>
 class set
 {
 public:
+	typedef Item Item;
 	typedef std::size_t size_type;
-	typedef node::value_type value_type;
 	set();
 	~set();
 	set(const set& source)  //Copy Constructor
@@ -30,12 +31,12 @@ public:
 		//CONSTANT MEMBER FUNCTIONS
 	void print_set() const;
 	size_type size() const{ return many_nodes; }
-	bool contains(const value_type& target) const;
-	value_type grab( )const;
+	bool contains(const Item& target) const;
+	Item grab( )const;
 	//MODIFICATION MEMBER FUNCTIONS
-	bool erase_one(const value_type& target);
-	size_type erase(const value_type& target);
-	void set_insert(const value_type& entry);
+	bool erase_one(const Item& target);
+	size_type erase(const Item& target);
+	void set_insert(const Item& entry);
 	
 	//OPERATOR OVERLOADERS
 	void operator +=(const set& addend);
@@ -47,7 +48,10 @@ private:
 	size_type many_nodes;
 };
 //Non Member functions for the set class
-std::ostream& operator << (std::ostream& out, const set& s);
-set operator +(const set& b1, const set& b2);
+   
+    template <class Item>
+    set<Item> operator +(const set<Item>& s1, const set<Item>& s2);
 }
-#endif // set_H
+
+#include "set4.template"  // Include the implementation
+#endif

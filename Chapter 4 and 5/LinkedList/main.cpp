@@ -6,6 +6,49 @@
 using namespace std;
 using namespace main_savitch_5;
 
+node* user_Input()
+{
+	//Postcondition: Takes inputs from user to popute a linked list.
+	node::value_type user_input = 0;
+	node* linked_list1 = NULL;
+	
+	cout << "Enter doubles to populate a linked list.\n enter -1 to end the list." << endl;
+	while(user_input != -1)
+	{
+		cin >> user_input;
+		if(user_input != -1)
+			list_head_insert(linked_list1, user_input);
+	}
+	return linked_list1;
+}
+
+void list_sort(node*& head_ptr)
+{
+	//	Precondition: head_ptr is a head pointer of a linked list of items
+	//	compared with a less-than operator.
+	//	Postcondition: head_ptr points to the head of a linked list with exactly the same entries
+	//	(including repitions if any), but the entries in this list_sort
+	//	are sorted from smallest to largest. The original linked list is no longer available.
+	node* cursor;
+	node* sorted_list = NULL;
+	node* largest_node = head_ptr;
+	
+	while(head_ptr != NULL)
+	{
+		largest_node = head_ptr;
+		for(cursor = head_ptr; cursor != NULL; cursor = cursor->link())
+		{
+			if(cursor->data( ) > largest_node->data())						//Find node with the largest item of all the nodes in original list
+			{
+					largest_node = cursor;
+			}	
+		}
+		list_head_insert(sorted_list, largest_node->data( ));				//Insert this node at the head of the new list
+		largest_node->set_data(head_ptr->data( ));
+		list_head_remove(head_ptr);											//
+	}
+	head_ptr = sorted_list;
+}
 void delete_repetitions(node*& head_ptr)
 {
 	//Precondition: values can be compared with == operator
@@ -14,15 +57,8 @@ void delete_repetitions(node*& head_ptr)
 	node* dup;
 
 	node::value_type duplicates = 0;
-	dup = list_search(head_ptr->link( ), head_ptr->data( ));
-	if(dup != NULL)
-	{
-	if(head_ptr->data( ) == dup->data())
-		list_head_remove(head_ptr);
-	}
-
 		
-	for(cursor= head_ptr->link( ); cursor != NULL; cursor = cursor->link())
+	for(cursor= head_ptr->link( ); cursor != NULL; cursor = cursor->link()) //Cycle through list after the head of the list
 	{
 		
 		
@@ -32,22 +68,19 @@ void delete_repetitions(node*& head_ptr)
 		if(dup != NULL)	
 		{
 			++duplicates;
-			dup->set_data(head_ptr->data( ));						//The data in the duplicate node is set to the head_ptr data, craeting a duplicate of the head pointer
+			dup->set_data(head_ptr->data( ));						//The data in the duplicate node is set to the head_ptr data, creating a duplicate of the head pointer
 			list_head_remove(head_ptr);								//The head pointer is removed, leaving one value
-			
+			cursor = head_ptr;
 		}
 	}
 	cout << "The number of duplicates was:\t" << duplicates << endl;
-	dup = list_search(head_ptr->link( ), head_ptr->data( ));
-	if(dup != NULL)
-	{
-	if(head_ptr->data( ) == dup->data())
-		list_head_remove(head_ptr);
-	}
-	
+	dup = list_search(head_ptr->link( ), head_ptr->data( ));		//Check the head one more time for duplicate value
+	if(dup != NULL);
+		list_head_remove(head_ptr);									//If duplicate found, remove head
+
 }
 
-void split(node*& head_ptr, node::value_type splitting_value)
+void split(node*& head_ptr)
 {
 	//Precondition: item values can be compared using the < operator
 	//Postcondition: The procedure divides the nodes into two linked lists:
@@ -57,23 +90,38 @@ void split(node*& head_ptr, node::value_type splitting_value)
 	//then the new linked list that has this item should have the same number 
 	//of nodes that repeat this item. 
 	node* less_than_split;
-	node* the_rest = head_ptr;
+	node* target;
 	node* cursor;
+	node* less_than_tail;
+	node::value_type splitting_value;
 	
+	cout << "Enter a value where you want to split your list:" << endl;
+	cin >> splitting_value;
+	
+	cursor = head_ptr;
+	list_copy(head_ptr, less_than_split, less_than_tail);
 
-	
+	if(head_ptr->data( ) < splitting_value)
+	{
+		list_head_remove(head_ptr);
+	}
+
 	for(cursor = head_ptr; cursor != NULL; cursor = cursor->link( ))
 	{
-		if(cursor->data( ) < splitting_value)
+		if(cursor->data( ) < splitting_value)						//Checks if data of the node is less than the split value
 		{
-			list_head_insert(less_than_split, cursor->data( ));
-			
+			target = list_search(head_ptr, cursor->data( ));		//Make the target node pointer point to the node that matches the cursor data
+			target->set_data(head_ptr->data( ));					//overwrite the target data with the current head pointer data, creating duplicate of head pointer
+			list_head_remove(head_ptr);								//remove the duplicate head pointer from original list
 		}
 		else
 		{
-			list_head_insert(the_rest, cursor->data( ));
+			target = list_search(less_than_split, cursor->data( ));		//Make the target node pointer point to the node that matches the cursor data
+			target->set_data(less_than_split->data( ));					//overwrite the target data with the current head pointer data, creating duplicate of head pointer
+			list_head_remove(less_than_split);							//remove the duplicate head pointer from original list
 		}
 	}
+	
 
 
 	
@@ -84,7 +132,7 @@ void split(node*& head_ptr, node::value_type splitting_value)
 	cout << endl;
 	cout << endl;
 	cout << "The rest of the values: ";
-	for(cursor = the_rest; cursor != NULL; cursor = cursor->link( ))
+	for(cursor = head_ptr; cursor != NULL; cursor = cursor->link( ))
 		cout << cursor->data( ) << ", ";
 }
 int main(int argc, char **argv)
@@ -93,21 +141,25 @@ int main(int argc, char **argv)
 	node *linked_list;
 	node *cursor;
 	
-	node::value_type num1 = 2, num2 = 4, num3 = 2, num4 = 1, num5 = 2, num6 = 1, num7 = 2;
-	list_head_insert(linked_list, num1);
-	list_head_insert(linked_list, num2);
-	list_head_insert(linked_list, num3);
-	list_head_insert(linked_list, num4);
-	list_head_insert(linked_list, num5);
-	list_head_insert(linked_list, num6);
-	list_head_insert(linked_list, num7);
 	
+	linked_list = user_Input();
+	int co = 0;
+	for(cursor = linked_list; cursor != NULL; cursor = cursor->link())
+	{
+		cout << cursor ->data() << ", ";
+		co++;
+		
+	}
+	cout << endl;
+	cout << endl;
+	list_sort(linked_list);
 	
+	cout << "The sorted list:" << endl;
 	for(cursor = linked_list; cursor != NULL; cursor = cursor->link())
 		cout << cursor ->data() << ", ";
-	cout<< endl;
-	cout<< endl;
-	
+		
+	cout << endl;
+	cout << endl;
 	delete_repetitions(linked_list);
 
 	
@@ -117,6 +169,7 @@ int main(int argc, char **argv)
 	cout<< endl;
 	cout<< endl;
 	
-	split(linked_list, 2);
+	split(linked_list);
+	
 	return EXIT_SUCCESS;
 }

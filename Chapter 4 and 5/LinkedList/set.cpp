@@ -1,26 +1,30 @@
 #include "set.h"
-//#include "node1.h"
 #include <cassert>
 #include <iostream>
 
-using namespace std;
+
 namespace main_savitch_5
 {
-set::set()
+	
+ template <class Item>
+    set<Item>::set()
 {
 	head_ptr = NULL;
 	many_nodes = 0;
 }
 
-set::~set()
+ template <class Item>
+    set<Item>::~set()
 {
 	list_clear(head_ptr);
 	many_nodes = 0;
 }
 
-bool set::contains(const value_type& target) const
+   template <class Item>
+    typename set<Item>::bool set<Item>::contains
+        (const Item& target) const
 {
-	const node *cursor;
+	const set<Item> *cursor;
 	bool contains = false;
 	
 	cursor = list_search(head_ptr, target);

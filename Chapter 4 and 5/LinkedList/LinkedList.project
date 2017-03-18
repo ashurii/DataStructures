@@ -98,5 +98,11 @@
     <File Name="node1.h"/>
     <File Name="set.cpp"/>
     <File Name="set.h"/>
+    <File Name="set4.h"/>
+    <File Name="set4.template"/>
+    <File Name="node2.h"/>
+    <File Name="node2.cpp"/>
   </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
 </CodeLite_Project>

@@ -1,26 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\DataStructures.workspace">
-  <int Value="0" Name="m_selectedTab"/>
+  <int Value="10" Name="m_selectedTab"/>
   <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\DataStructures.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\LinkedList\main.cpp" Name="FileName"/>
-      <int Value="9" Name="FirstVisibleLine"/>
-      <int Value="15" Name="CurrentLine"/>
+      <int Value="152" Name="FirstVisibleLine"/>
+      <int Value="160" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\LinkedList\node1.h" Name="FileName"/>
-      <int Value="149" Name="FirstVisibleLine"/>
-      <int Value="157" Name="CurrentLine"/>
+      <int Value="115" Name="FirstVisibleLine"/>
+      <int Value="133" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\LinkedList\node1.cpp" Name="FileName"/>
-      <int Value="34" Name="FirstVisibleLine"/>
+      <int Value="14" Name="FirstVisibleLine"/>
+      <int Value="29" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\Template_Test\template_bag.h" Name="FileName"/>
+      <int Value="67" Name="FirstVisibleLine"/>
+      <int Value="98" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\Template_Test\template_bag.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="12" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\Template_Node\node_iterator.h" Name="FileName"/>
+      <int Value="251" Name="FirstVisibleLine"/>
+      <int Value="268" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\Template_Node\node_iterator.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="2" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\LinkedList\set.cpp" Name="FileName"/>
+      <int Value="72" Name="FirstVisibleLine"/>
+      <int Value="83" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\Template_Node\bag.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
       <int Value="15" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\Template_Node\bag.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\LinkedList\set.h" Name="FileName"/>
+      <int Value="30" Name="FirstVisibleLine"/>
+      <int Value="48" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\Node\node.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ashly Altman\Documents\GitHub\DataStructures\Chapter 4 and 5\Node\node.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

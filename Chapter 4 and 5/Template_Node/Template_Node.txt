@@ -1,0 +1,1 @@
+./Debug/main.cpp.o ./Debug/template_node.cpp.o ./Debug/node_iterator.cpp.o   

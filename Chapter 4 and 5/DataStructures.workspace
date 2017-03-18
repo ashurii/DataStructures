@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="DataStructures" Database="" Version="10.0.0">
   <Project Name="Node" Path="Node/Node.project" Active="No"/>
-  <Project Name="LinkedList" Path="LinkedList/LinkedList.project" Active="Yes"/>
+  <Project Name="LinkedList" Path="LinkedList/LinkedList.project" Active="No"/>
   <Project Name="LinkedBag" Path="LinkedBag/LinkedBag.project" Active="No"/>
+  <Project Name="Template_Bag" Path="Template_Test/Template_Test.project" Active="No"/>
+  <Project Name="Template_Node" Path="Template_Node/Template_Node.project" Active="No"/>
+  <Project Name="Node2" Path="Node2/Node2.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -13,6 +16,9 @@
       <Project Name="LinkedList" ConfigName="Debug"/>
       <Project Name="LinkedBag" ConfigName="Debug"/>
       <Project Name="Sequence" ConfigName="Debug"/>
+      <Project Name="Template_Bag" ConfigName="Debug"/>
+      <Project Name="Template_Node" ConfigName="Debug"/>
+      <Project Name="Node2" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -23,6 +29,9 @@
       <Project Name="LinkedList" ConfigName="Release"/>
       <Project Name="LinkedBag" ConfigName="Release"/>
       <Project Name="Sequence" ConfigName="Release"/>
+      <Project Name="Template_Bag" ConfigName="Release"/>
+      <Project Name="Template_Node" ConfigName="Release"/>
+      <Project Name="Node2" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
